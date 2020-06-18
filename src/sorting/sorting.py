@@ -1,17 +1,24 @@
 # TO-DO: complete the helper function below to merge 2 sorted arrays
 def merge(arrA, arrB):
-    elements = len(arrA) + len(arrB)
+    elements = len(arrA) + len(arrB) # new list thats the length of both lists combined
     merged_arr = [0] * elements
-
+    # create pointers
     j, k = 0, 0
     # divide and conquer!
-    for i in range(len(merged_arr)): 
+    for i in range(len(merged_arr)):
+        # compare values at both pointers
+        # add smaller value to merged list
+        # increment that pointer
+
+        # check if pointer is out of bounds of its respective array
+        # if it is, we need to increment
         if k > len(arrB) - 1:
             merged_arr[i] = arrA[j]
             j += 1
         elif j > len(arrA) - 1:
             merged_arr[i] = arrB[k]
             k += 1
+        # both inices are still in bounds of their respective arrays
         elif arrA[j] < arrB[k]:
             merged_arr[i] = arrA[j]
             j += 1
@@ -25,6 +32,9 @@ def merge(arrA, arrB):
 # merging actually = appending the item in the sorted order
 # appending has 2 steps, comparing the items we want to combine and then inserting 
 def merge_sort(arr):
+    """
+    recursive merge sort implementation
+    """
     # check if array is empty (already sorted)
     if len(arr) <= 1:
         return arr
